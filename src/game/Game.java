@@ -10,6 +10,7 @@ import java.util.concurrent.TimeUnit;
 
 import gameobjects.Actor;
 import gameobjects.ContainerThing;
+import gameobjects.Quest;
 import gameobjects.Room;
 import gameobjects.Thing;
 import gameobjects.ThingList;
@@ -19,9 +20,25 @@ import globals.Dir;
 public class Game implements java.io.Serializable {
 
     private ArrayList<Room> map; // the map - an ArrayList of Rooms    
-    private Actor player;  // the player - provides 'first person perspective'
-    private Actor captainBarbossa;
-    private Actor theAntaginist;
+    public Actor player;  // the player - provides 'first person perspective'
+    private Actor captainBota;
+    private Actor theAntagonist;
+    private Actor beachConquistador1;
+    private Actor beachConquistador2;
+    private Actor beachSavage1;
+    private Actor beachSavage2;
+    private Actor villageSavage1;
+    private Actor villageSavage2;
+    private Actor villageSavage3;
+    private Actor villageSavage4;
+    private Actor villageSavage5;
+    private Actor villageSavage6;
+    private Actor villageSavage7;
+    private Actor villageSavage8;
+    private Actor witchDoctor;
+    private Actor Alligator1;
+    private Actor Panther1;
+    private Actor Panther2;
 
     public Game() {
         Parser.initVocab();
@@ -31,248 +48,245 @@ public class Game implements java.io.Serializable {
     private void initGame() {
         this.map = new ArrayList<Room>();
         // --- construct a new adventure ---
-
-
         ThingList playerlist = new ThingList("playerlist");
 
-        ThingList CobaPyramid00List = new ThingList("CobaPyramid00List");
-        ThingList CobaAlter01List = new ThingList("CobaAlter01List");
-        ThingList CobaSouthJungle02List = new ThingList("CobaSouthJungle02List");
-        ThingList CobaUnknownShrine03List = new ThingList("CobaUnknownShrine03List");
-        ThingList CobaRiverMouth04List = new ThingList("CobaRiverMouth04List");
-        ThingList Jungle05List = new ThingList("Jungle05List");
-        ThingList Cave06List = new ThingList("Cave06List");
-        ThingList Jungle07List = new ThingList("Jungle07List");
-        ThingList Jungle08List = new ThingList("Jungle08List");
-        ThingList Jungle09List = new ThingList("Jungle09List");
+        ThingList CobaPyramid00List         = new ThingList("CobaPyramid00List");
+        ThingList CobaAlter01List           = new ThingList("CobaAlter01List");
+        ThingList CobaSouthJungle02List     = new ThingList("CobaSouthJungle02List");
+        ThingList CobaUnknownShrine03List   = new ThingList("CobaUnknownShrine03List");
+        ThingList CobaRiverMouth04List      = new ThingList("CobaRiverMouth04List");
+        ThingList Jungle05List              = new ThingList("Jungle05List");
+        ThingList Cave06List                = new ThingList("Cave06List");
+        ThingList Jungle07List              = new ThingList("Jungle07List");
+        ThingList Jungle08List              = new ThingList("Jungle08List");
+        ThingList Jungle09List              = new ThingList("Jungle09List");
 
-        ThingList CobaGameCourt10List = new ThingList("CobaGameCourt10List");
-        ThingList CobaSmallPyramid11List = new ThingList("CobaSmallPyramid11List");
-        ThingList Jungle12List = new ThingList("Jungle12List");
-        ThingList Jungle13List = new ThingList("Jungle13List");
-        ThingList CobaRiverCrossing14List = new ThingList("CobaRiverCrossing14List");
-        ThingList Jungle15List = new ThingList("Jungle15List");
-        ThingList Jungle16List = new ThingList("Jungle16List");
-        ThingList Jungle17List = new ThingList("Jungle17List");
-        ThingList Jungle18List = new ThingList("Jungle18List");
-        ThingList EgyptianShip19List = new ThingList("EgyptianShip19List");
+        ThingList CobaGameCourt10List       = new ThingList("CobaGameCourt10List");
+        ThingList CobaSmallPyramid11List    = new ThingList("CobaSmallPyramid11List");
+        ThingList Jungle12List              = new ThingList("Jungle12List");
+        ThingList Jungle13List              = new ThingList("Jungle13List");
+        ThingList CobaRiverCrossing14List   = new ThingList("CobaRiverCrossing14List");
+        ThingList Jungle15List              = new ThingList("Jungle15List");
+        ThingList Jungle16List              = new ThingList("Jungle16List");
+        ThingList Jungle17List              = new ThingList("Jungle17List");
+        ThingList Jungle18List              = new ThingList("Jungle18List");
+        ThingList EgyptianShip19List        = new ThingList("EgyptianShip19List");
 
-        ThingList Jungle20List = new ThingList("Jungle20List");
-        ThingList Jungle21List = new ThingList("Jungle21List");
-        ThingList Jungle22List = new ThingList("Jungle22List");
-        ThingList Jungle23List = new ThingList("Jungle23List");
-        ThingList CobaRiver24List = new ThingList("CobaRiver24List");
-        ThingList CobaRiver25List = new ThingList("CobaRiver25List");
-        ThingList Jungle26List = new ThingList("Jungle26List");
-        ThingList Jungle27List = new ThingList("Jungle27List");
-        ThingList Trap28List = new ThingList("Trap28List");
-        ThingList Dungeon29List = new ThingList("Dungeon29List");
+        ThingList Jungle20List              = new ThingList("Jungle20List");
+        ThingList Jungle21List              = new ThingList("Jungle21List");
+        ThingList Jungle22List              = new ThingList("Jungle22List");
+        ThingList Jungle23List              = new ThingList("Jungle23List");
+        ThingList CobaRiver24List           = new ThingList("CobaRiver24List");
+        ThingList CobaRiver25List           = new ThingList("CobaRiver25List");
+        ThingList Jungle26List              = new ThingList("Jungle26List");
+        ThingList Jungle27List              = new ThingList("Jungle27List");
+        ThingList Trap28List                = new ThingList("Trap28List");
+        ThingList Dungeon29List             = new ThingList("Dungeon29List");
 
-        ThingList UnknownShrine30List = new ThingList("UnknownShrine30List");
-        ThingList Jungle31List = new ThingList("Jungle31List");
-        ThingList Jungle32List = new ThingList("Jungle32List");
-        ThingList PantherDen33List = new ThingList("PantherDen33List");
-        ThingList Jungle34List = new ThingList("Jungle34List");
-        ThingList CobaRiver35List = new ThingList("CobaRiver35List");
-        ThingList SavageVillage36List = new ThingList("SavageVillage36List");
-        ThingList Jungle37List = new ThingList("Jungle37List");
-        ThingList Jungle38List = new ThingList("Jungle38List");
-        ThingList Cave39List = new ThingList("Cave39List");
+        ThingList UnknownShrine30List       = new ThingList("UnknownShrine30List");
+        ThingList Jungle31List              = new ThingList("Jungle31List");
+        ThingList Jungle32List              = new ThingList("Jungle32List");
+        ThingList PantherDen33List          = new ThingList("PantherDen33List");
+        ThingList Jungle34List              = new ThingList("Jungle34List");
+        ThingList CobaRiver35List           = new ThingList("CobaRiver35List");
+        ThingList SavageVillage36List       = new ThingList("SavageVillage36List");
+        ThingList Jungle37List              = new ThingList("Jungle37List");
+        ThingList Jungle38List              = new ThingList("Jungle38List");
+        ThingList Cave39List                = new ThingList("Cave39List");
 
-        ThingList Jungle40List = new ThingList("Jungle40List");
-        ThingList Trap41List = new ThingList("Trap41List");
-        ThingList SavageVillage42List = new ThingList("SavageVillage42List");
-        ThingList Jungle43List = new ThingList("Jungle43List");
-        ThingList Jungle44List = new ThingList("Jungle44List");
-        ThingList Pond45List = new ThingList("Pond45List");
-        ThingList Jungle46List = new ThingList("Jungle46List");
-        ThingList Jungle47List = new ThingList("Jungle47List");
-        ThingList Jungle48List = new ThingList("Jungle48List");
-        ThingList Trap49List = new ThingList("Trap49List");
+        ThingList Jungle40List              = new ThingList("Jungle40List");
+        ThingList Trap41List                = new ThingList("Trap41List");
+        ThingList SavageVillage42List       = new ThingList("SavageVillage42List");
+        ThingList Jungle43List              = new ThingList("Jungle43List");
+        ThingList Jungle44List              = new ThingList("Jungle44List");
+        ThingList Pond45List                = new ThingList("Pond45List");
+        ThingList Jungle46List              = new ThingList("Jungle46List");
+        ThingList Jungle47List              = new ThingList("Jungle47List");
+        ThingList Jungle48List              = new ThingList("Jungle48List");
+        ThingList Trap49List                = new ThingList("Trap49List");
 
-        ThingList WitchDoctor50List = new ThingList("WitchDoctor50List");
-        ThingList Jungle51List = new ThingList("Jungle51List");
-        ThingList Jungle52List = new ThingList("Jungle52List");
-        ThingList Spring53List = new ThingList("Spring53List");
-        ThingList UnknownShrine54List = new ThingList("UnknownShrine54List");
-        ThingList Jungle55List = new ThingList("Jungle55List");
-        ThingList Jungle56List = new ThingList("Jungle56List");
-        ThingList PantherDen57List = new ThingList("PantherDen57List");
-        ThingList Jungle58List = new ThingList("Jungle58List");
-        ThingList Jungle59List = new ThingList("Jungle59List");
+        ThingList WitchDoctor50List         = new ThingList("WitchDoctor50List");
+        ThingList Jungle51List              = new ThingList("Jungle51List");
+        ThingList Jungle52List              = new ThingList("Jungle52List");
+        ThingList Spring53List              = new ThingList("Spring53List");
+        ThingList UnknownShrine54List       = new ThingList("UnknownShrine54List");
+        ThingList Jungle55List              = new ThingList("Jungle55List");
+        ThingList Jungle56List              = new ThingList("Jungle56List");
+        ThingList PantherDen57List          = new ThingList("PantherDen57List");
+        ThingList Jungle58List              = new ThingList("Jungle58List");
+        ThingList Jungle59List              = new ThingList("Jungle59List");
 
-        ThingList Jungle60List = new ThingList("Jungle60List");
-        ThingList VikingShip61List = new ThingList("VikingShip61List");
-        ThingList VikingOutpost62List = new ThingList("VikingOutpost62List");
-        ThingList UnknownRiver63List = new ThingList("UnknownRiver63List");
-        ThingList Jungle64List = new ThingList("Jungle64List");
-        ThingList Jungle65List = new ThingList("Jungle65List");
-        ThingList TulumPyramid66List = new ThingList("TulumPyramid66List");
-        ThingList TulumVillage67List = new ThingList("TulumVillage67List");
-        ThingList Jungle68List = new ThingList("Jungle68List");
-        ThingList Beach69List = new ThingList("Beach69List");
+        ThingList Jungle60List              = new ThingList("Jungle60List");
+        ThingList VikingShip61List          = new ThingList("VikingShip61List");
+        ThingList VikingOutpost62List       = new ThingList("VikingOutpost62List");
+        ThingList UnknownRiver63List        = new ThingList("UnknownRiver63List");
+        ThingList Jungle64List              = new ThingList("Jungle64List");
+        ThingList Jungle65List              = new ThingList("Jungle65List");
+        ThingList TulumPyramid66List        = new ThingList("TulumPyramid66List");
+        ThingList TulumVillage67List        = new ThingList("TulumVillage67List");
+        ThingList Jungle68List              = new ThingList("Jungle68List");
+        ThingList Beach69List               = new ThingList("Beach69List");
 
-        ThingList Jungle70List = new ThingList("Jungle70List");
-        ThingList Jungle71List = new ThingList("Jungle71List");
-        ThingList Jungle72List = new ThingList("Jungle72List");
-        ThingList UnknownRiver73List = new ThingList("UnknownRiver73List");
-        ThingList Cave74List = new ThingList("Cave74List");
-        ThingList Jungle75List = new ThingList("Jungle75List");
-        ThingList TulumVillage76List = new ThingList("TulumVillage76List");
-        ThingList TulumSmallPyramid77List = new ThingList("TulumSmallPyramid77List");
-        ThingList Beach78List = new ThingList("Beach78List");
-        ThingList Ocean79List = new ThingList("Ocean79List");
+        ThingList Jungle70List              = new ThingList("Jungle70List");
+        ThingList Jungle71List              = new ThingList("Jungle71List");
+        ThingList Jungle72List              = new ThingList("Jungle72List");
+        ThingList UnknownRiver73List        = new ThingList("UnknownRiver73List");
+        ThingList Cave74List                = new ThingList("Cave74List");
+        ThingList Jungle75List              = new ThingList("Jungle75List");
+        ThingList TulumVillage76List        = new ThingList("TulumVillage76List");
+        ThingList TulumSmallPyramid77List   = new ThingList("TulumSmallPyramid77List");
+        ThingList Beach78List               = new ThingList("Beach78List");
+        ThingList Ocean79List               = new ThingList("Ocean79List");
 
-        ThingList Trap80List = new ThingList("Trap80List");
-        ThingList Jungle81List = new ThingList("Jungle81List");
-        ThingList Jungle82List = new ThingList("Jungle82List");
-        ThingList UnknownRiver83List = new ThingList("UnknownRiver83List");
-        ThingList CenoteDasOjos84List = new ThingList("CenoteDasOjos84List");
-        ThingList Jungle85List = new ThingList("Jungle85List");
-        ThingList Beach86List = new ThingList("Beach86List");
-        ThingList Beach87List = new ThingList("Beach87List");
-        ThingList Ocean88List = new ThingList("Ocean88List");
-        ThingList Ocean89List = new ThingList("Ocean89List");
+        ThingList Trap80List                = new ThingList("Trap80List");
+        ThingList Jungle81List              = new ThingList("Jungle81List");
+        ThingList Jungle82List              = new ThingList("Jungle82List");
+        ThingList UnknownRiver83List        = new ThingList("UnknownRiver83List");
+        ThingList CenoteDasOjos84List       = new ThingList("CenoteDasOjos84List");
+        ThingList Jungle85List              = new ThingList("Jungle85List");
+        ThingList Beach86List               = new ThingList("Beach86List");
+        ThingList Beach87List               = new ThingList("Beach87List");
+        ThingList Ocean88List               = new ThingList("Ocean88List");
+        ThingList Ocean89List               = new ThingList("Ocean89List");
 
-        ThingList SavageVillage90List = new ThingList("SavageVillage90List");
-        ThingList Jungle91List = new ThingList("Jungle91List");
-        ThingList Jungle92List = new ThingList("Jungle92List");
-        ThingList UnknownRiver93List = new ThingList("UnknownRiver93List");
-        ThingList Jungle94List = new ThingList("Jungle94List");
-        ThingList Beach95List = new ThingList("Beach95List");
-        ThingList Ocean96List = new ThingList("Ocean96List");
-        ThingList Raft97List = new ThingList("Raft97List");
-        ThingList Ship98List = new ThingList("Ship98List");
-        ThingList Ocean99List = new ThingList("Ocean99List");
+        ThingList SavageVillage90List       = new ThingList("SavageVillage90List");
+        ThingList Jungle91List              = new ThingList("Jungle91List");
+        ThingList Jungle92List              = new ThingList("Jungle92List");
+        ThingList UnknownRiver93List        = new ThingList("UnknownRiver93List");
+        ThingList Jungle94List              = new ThingList("Jungle94List");
+        ThingList Beach95List               = new ThingList("Beach95List");
+        ThingList Ocean96List               = new ThingList("Ocean96List");
+        ThingList Raft97List                = new ThingList("Raft97List");
+        ThingList Ship98List                = new ThingList("Ship98List");
+        ThingList Ocean99List               = new ThingList("Ocean99List");
 
-        Room CobaPyramid00 = new Room();
-        Room CobaAlter01 = new Room();
-        Room CobaSouthJungle02 = new Room();
-        Room CobaUnknownShrine03 = new Room();
-        Room CobaRiverMouth04 = new Room();
-        Room Jungle05 = new Room();
-        Room Cave06 = new Room();
-        Room Jungle07 = new Room();
-        Room Jungle08 = new Room();
-        Room Jungle09 = new Room();
+        Room CobaPyramid00          = new Room();
+        Room CobaAlter01            = new Room();
+        Room CobaSouthJungle02      = new Room();
+        Room CobaUnknownShrine03    = new Room();
+        Room CobaRiverMouth04       = new Room();
+        Room Jungle05               = new Room();
+        Room Cave06                 = new Room();
+        Room Jungle07               = new Room();
+        Room Jungle08               = new Room();
+        Room Jungle09               = new Room();
 
-        Room CobaGameCourt10 = new Room();
-        Room CobaSmallPyramid11 = new Room();
-        Room Jungle12 = new Room();
-        Room Jungle13 = new Room();
-        Room CobaRiverCrossing14 = new Room();
-        Room Jungle15 = new Room();
-        Room Jungle16 = new Room();
-        Room Jungle17 = new Room();
-        Room Jungle18 = new Room();
-        Room EgyptianShip19 = new Room();
+        Room CobaGameCourt10        = new Room();
+        Room CobaSmallPyramid11     = new Room();
+        Room Jungle12               = new Room();
+        Room Jungle13               = new Room();
+        Room CobaRiverCrossing14    = new Room();
+        Room Jungle15               = new Room();
+        Room Jungle16               = new Room();
+        Room Jungle17               = new Room();
+        Room Jungle18               = new Room();
+        Room EgyptianShip19         = new Room();
 
-        Room Jungle20 = new Room();
-        Room Jungle21 = new Room();
-        Room Jungle22 = new Room();
-        Room Jungle23 = new Room();
-        Room CobaRiver24 = new Room();
-        Room CobaRiver25 = new Room();
-        Room Jungle26 = new Room();
-        Room Jungle27 = new Room();
-        Room Trap28 = new Room();
-        Room Dungeon29 = new Room();
+        Room Jungle20               = new Room();
+        Room Jungle21               = new Room();
+        Room Jungle22               = new Room();
+        Room Jungle23               = new Room();
+        Room CobaRiver24            = new Room();
+        Room CobaRiver25            = new Room();
+        Room Jungle26               = new Room();
+        Room Jungle27               = new Room();
+        Room Trap28                 = new Room();
+        Room Dungeon29              = new Room();
 
-        Room UnknownShrine30 = new Room();
-        Room Jungle31 = new Room();
-        Room Jungle32 = new Room();
-        Room PantherDen33 = new Room();
-        Room Jungle34 = new Room();
-        Room CobaRiver35 = new Room();
-        Room SavageVillage36 = new Room();
-        Room Jungle37 = new Room();
-        Room Jungle38 = new Room();
-        Room Cave39 = new Room();
+        Room UnknownShrine30        = new Room();
+        Room Jungle31               = new Room();
+        Room Jungle32               = new Room();
+        Room PantherDen33           = new Room();
+        Room Jungle34               = new Room();
+        Room CobaRiver35            = new Room();
+        Room SavageVillage36        = new Room();
+        Room Jungle37               = new Room();
+        Room Jungle38               = new Room();
+        Room Cave39                 = new Room();
 
-        Room Jungle40 = new Room();
-        Room Trap41 = new Room();
-        Room SavageVillage42 = new Room();
-        Room Jungle43 = new Room();
-        Room Jungle44 = new Room();
-        Room Pond45 = new Room();
-        Room Jungle46 = new Room();
-        Room Jungle47 = new Room();
-        Room Jungle48 = new Room();
-        Room Trap49 = new Room();
+        Room Jungle40               = new Room();
+        Room Trap41                 = new Room();
+        Room SavageVillage42        = new Room();
+        Room Jungle43               = new Room();
+        Room Jungle44               = new Room();
+        Room Pond45                 = new Room();
+        Room Jungle46               = new Room();
+        Room Jungle47               = new Room();
+        Room Jungle48               = new Room();
+        Room Trap49                 = new Room();
 
-        Room WitchDoctor50 = new Room();
-        Room Jungle51 = new Room();
-        Room Jungle52 = new Room();
-        Room Spring53 = new Room();
-        Room UnknownShrine54 = new Room();
-        Room Jungle55 = new Room();
-        Room Jungle56 = new Room();
-        Room PantherDen57 = new Room();
-        Room Jungle58 = new Room();
-        Room Jungle59 = new Room();
+        Room WitchDoctor50          = new Room();
+        Room Jungle51               = new Room();
+        Room Jungle52               = new Room();
+        Room Spring53               = new Room();
+        Room UnknownShrine54        = new Room();
+        Room Jungle55               = new Room();
+        Room Jungle56               = new Room();
+        Room PantherDen57           = new Room();
+        Room Jungle58               = new Room();
+        Room Jungle59               = new Room();
 
-        Room Jungle60 = new Room();
-        Room VikingShip61 = new Room();
-        Room VikingOutpost62 = new Room();
-        Room UnknownRiver63 = new Room();
-        Room Jungle64 = new Room();
-        Room Jungle65 = new Room();
-        Room TulumPyramid66 = new Room();
-        Room TulumVillage67 = new Room();
-        Room Jungle68 = new Room();
-        Room Beach69 = new Room();
+        Room Jungle60               = new Room();
+        Room VikingShip61           = new Room();
+        Room VikingOutpost62        = new Room();
+        Room UnknownRiver63         = new Room();
+        Room Jungle64               = new Room();
+        Room Jungle65               = new Room();
+        Room TulumPyramid66         = new Room();
+        Room TulumVillage67         = new Room();
+        Room Jungle68               = new Room();
+        Room Beach69                = new Room();
 
-        Room Jungle70 = new Room();
-        Room Jungle71 = new Room();
-        Room Jungle72 = new Room();
-        Room UnknownRiver73 = new Room();
-        Room Cave74 = new Room();
-        Room Jungle75 = new Room();
-        Room TulumVillage76 = new Room();
-        Room TulumSmallPyramid77 = new Room();
-        Room Beach78 = new Room();
-        Room Ocean79 = new Room();
+        Room Jungle70               = new Room();
+        Room Jungle71               = new Room();
+        Room Jungle72               = new Room();
+        Room UnknownRiver73         = new Room();
+        Room Cave74                 = new Room();
+        Room Jungle75               = new Room();
+        Room TulumVillage76         = new Room();
+        Room TulumSmallPyramid77    = new Room();
+        Room Beach78                = new Room();
+        Room Ocean79                = new Room();
 
-        Room Trap80 = new Room();
-        Room Jungle81 = new Room();
-        Room Jungle82 = new Room();
-        Room UnknownRiver83 = new Room();
-        Room CenoteDasOjos84 = new Room();
-        Room Jungle85 = new Room();
-        Room Beach86 = new Room();
-        Room Beach87 = new Room();
-        Room Ocean88 = new Room();
-        Room Ocean89 = new Room();
+        Room Trap80                 = new Room();
+        Room Jungle81               = new Room();
+        Room Jungle82               = new Room();
+        Room UnknownRiver83         = new Room();
+        Room CenoteDasOjos84        = new Room();
+        Room Jungle85               = new Room();
+        Room Beach86                = new Room();
+        Room Beach87                = new Room();
+        Room Ocean88                = new Room();
+        Room Ocean89                = new Room();
 
-        Room SavageVillage90 = new Room();
-        Room Jungle91 = new Room();
-        Room Jungle92 = new Room();
-        Room UnknownRiver93 = new Room();
-        Room Jungle94 = new Room();
-        Room Beach95 = new Room();
-        Room Ocean96 = new Room();
-        Room Raft97 = new Room();
-        Room Ship98 = new Room();
-        Room Ocean99 = new Room();
+        Room SavageVillage90        = new Room();
+        Room Jungle91               = new Room();
+        Room Jungle92               = new Room();
+        Room UnknownRiver93         = new Room();
+        Room Jungle94               = new Room();
+        Room Beach95                = new Room();
+        Room Ocean96                = new Room();
+        Room Raft97                 = new Room();
+        Room Ship98                 = new Room();
+        Room Ocean99                = new Room();
 
-        Thing water = new Thing("fresh water", "fresh drinkable water", null);
-        Thing sand = new Thing("sand", "A handful of sand", null);
-        Thing moss = new Thing("moss", "A handful of tree moss", null);
-        Thing wood = new Thing("wood", "A log of wood", null);
-        Thing axe = new Thing("axe", "An axe, constructed from a wooden handle, and a stone blade. For chopping trees", null);
-        Thing sword = new Thing("sword", "a sharp Spanish sword", null);
-        Thing flint = new Thing("flint", "a piece of flint rock", null);
-        Thing spear = new Thing("spear", "A weapon of the natives. A long wooden shaft, and a spear tip made of flint", null);
-        Thing seaShell = new Thing("sea shell", "A shell from the sea. Bright and colorful", null);
-        Thing egyptianPeice1 = new Thing("Egyptian Tablet bottom left corner", "A portion of an artifact. Could there be more?", null);
-        Thing egyptianPeice2 = new Thing("Egyptian Tablet bottom right corner", "A portion of an artifact. Could there be more?", null);
-        Thing egyptianPeice3 = new Thing("Egyptian Tablet top left corner", "A portion of an artifact. Could there be more?", null);
-        Thing egyptianPeice4 = new Thing("Egyptian Tablet top right corner", "A portion of an artifact. Could there be more?", null);
-        Thing nordicPeice1 = new Thing("Nordic etched pole", "A portion of an artifact. Could there be more?", null);
-        Thing nordicPeice2 = new Thing("Nordic etched pole", "A portion of an artifact. Could there be more?", null);
-        Thing nordicPeice3 = new Thing("Nordic etched blade shard", "A portion of an artifact. Could there be more?", null);
-        Thing nordicPeice4 = new Thing("Nordic etched blade shard", "A portion of an artifact. Could there be more?", null);
-
+        Thing water             = new Thing("fresh water", "fresh drinkable water", null);
+        Thing sand              = new Thing("sand", "A handful of sand", Beach87);
+        Thing moss              = new Thing("moss", "A handful of tree moss", null);
+        Thing wood              = new Thing("wood", "A log of wood", Jungle85);
+        Thing axe               = new Thing("axe", "An axe, constructed from a wooden handle, and a stone blade. For chopping trees", null);
+        Thing sword             = new Thing("sword", "a sharp Spanish sword", null);
+        Thing flint             = new Thing("flint", "a piece of flint rock", null);
+        Thing spear             = new Thing("spear", "A weapon of the natives. A long wooden shaft, and a spear tip made of flint", null);
+        Thing seaShell          = new Thing("sea shell", "A shell from the sea. Bright and colorful", null);
+        Thing egyptianPiece1    = new Thing("Egyptian Tablet bottom left corner", "A portion of an artifact. Could there be more?", null);
+        Thing egyptianPiece2    = new Thing("Egyptian Tablet bottom right corner", "A portion of an artifact. Could there be more?", null);
+        Thing egyptianPiece3    = new Thing("Egyptian Tablet top left corner", "A portion of an artifact. Could there be more?", null);
+        Thing egyptianPiece4    = new Thing("Egyptian Tablet top right corner", "A portion of an artifact. Could there be more?", null);
+        Thing nordicPiece1      = new Thing("Nordic etched pole", "A portion of an artifact. Could there be more?", null);
+        Thing nordicPiece2      = new Thing("Nordic etched pole", "A portion of an artifact. Could there be more?", null);
+        Thing nordicPiece3      = new Thing("Nordic etched blade shard", "A portion of an artifact. Could there be more?", null);
+        Thing nordicPiece4      = new Thing("Nordic etched blade shard", "A portion of an artifact. Could there be more?", null);
 
         //                 Room( name,   description,              N,        S,      W,      E,  [Up], [Down])
         CobaPyramid00.init("The Great Coba Pyramid", "It's beautiful, massive. A step pyramid scraping the sky.", null, CobaAlter01, null, CobaGameCourt10, null, null, CobaPyramid00List);
@@ -496,16 +510,25 @@ public class Game implements java.io.Serializable {
         map.add(Ocean99);
 
         // create player and set location
-        player = new Actor("player", "The Spaniard", playerlist, Beach87);
-        captainBarbossa = new Actor("Captain Barbossa", "Captain of the Spanish Expedition", null, Beach87);
-        //beachConquistedor1
-        //beachConquistedor2
-        theAntaginist = new Actor("The Antginist", "A mysterious man without a name", null, Beach87);
-        //beachSavage1
-        //beachSavage2
-        //Alligator1
-        //Panther1
-        //Panther2
+        player              = new Actor("player", "The Spaniard", playerlist, Beach87);
+        captainBota         = new Actor("Captain Bota", "Captain of the Spanish Expedition", null, Beach87);
+        beachConquistador1  = new Actor("Herrero", "One of Cpt. Bota's men", null, Beach87);
+        beachConquistador2  = new Actor("Velez", "Another one of Cpt. Bota's men", null, Beach87);
+        theAntagonist       = new Actor("The Antginist", "A mysterious man without a name", null, Beach87);
+        beachSavage1        = new Actor("Native savage", "Follower of the mysterious man", null, null);
+        beachSavage2        = new Actor("Towering native savage", "A tall, strong protector of the mysterious man", null, null);
+        villageSavage1      = new Actor("Village savage", "A savage villager", null, null);
+        villageSavage2      = new Actor("Ugly village savage", "A savage with an ugly mug", null, null);
+        villageSavage3      = new Actor("Mighty village savage", "An insanely muscular villager", null, null);
+        villageSavage4      = new Actor("Scrouny village savage", "A small and scrappy savage villager", null, null);
+        villageSavage5      = new Actor("Village savage", "A savage villager", null, null);
+        villageSavage6      = new Actor("Rowdy village savage", "A villager with a twisted look in his eye", null, null);
+        villageSavage7      = new Actor("Cloaked village savage", "", null, null);
+        villageSavage8      = new Actor("Weak village savage", "", null, null);
+        witchDoctor         = new Actor("The Witch Doctor", "", null, null);
+        Alligator1          = new Actor("Alligator", "", null, null);
+        Panther1            = new Actor("Black Panther", "", null, null);
+        Panther2            = new Actor("Albino Panther", "", null, null);
 
     }
 
@@ -570,7 +593,11 @@ public class Game implements java.io.Serializable {
     }
 
     void look() {
-        showStr("You are in the " + player.describeLocation());
+        Room currentRoom = player.getLocation();
+        if(currentRoom.getName().equals("Jungle") || currentRoom.getName().equals("Cave"))
+            showStr("You are in the " + player.describeLocation());
+        else
+            showStr("You are at the " + player.describeLocation());
     }
 
     // utility method to display string if not empty
@@ -581,7 +608,7 @@ public class Game implements java.io.Serializable {
         }
         if (!s.isEmpty()) {
             try {
-                printWithDelays(s, TimeUnit.MILLISECONDS, 50);
+                printWithDelays(s, TimeUnit.MILLISECONDS, 20);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -608,20 +635,105 @@ public class Game implements java.io.Serializable {
         return player.lookIn(obname);
     }
 
-    public void showIntro() {
-        String s;
+    public void showTitle() {
         String intro;
 
+                                                     
+       intro = " _____ ___  ____   ____  ___ _____ _____ _____ _   _ \n"
+       + "|  ___/ _ \\|  _ \\ / ___|/ _ |_   _|_   _| ____| \\ | |\n"
+       + "| |_ | | | | |_) | |  _| | | || |   | | |  _| |  \\| |\n"
+       + "|  _|| |_| |  _ <| |_| | |_| || |   | | | |___| |\\  |\n"
+       + "|_|   \\___/|_|  \\_\\____|\\___/ |_|   |_| |_____|_| \\_|\n"
+       + "      ____ ___  _   _  ___  _   _ _____ ____ _____   \n"
+       + "     / ___/ _ \\| \\ | |/ _ \\| | | | ____/ ___|_   _|  \n"
+       + "    | |  | | | |  \\| | | | | | | |  _| \\___ \\ | |    \n"
+       + "    | |__| |_| | |\\  | |_| | |_| | |___ ___) || |    \n"
+       + "     \\____\\___/|_| \\_|\\__ \\_\\___/|_____|____/ |_|    \n";
+                                                            
+        System.out.println(intro);
+        // showStr(intro);
+    }
+    
 
-        intro = "Welcome to\n"
-                + "FORGOTTEN CONQUEST\n"
-                + "\n"
-                + "1519 A.D.\n"
+    Quest quest1 = new Quest("quest1", "\n"
+                            + "1519 A.D.\n"
+                            + "\n"
+                            + "The journey to the new world has been long...\n"
+                            + "...but we are finally here!\n"
+                            + "\n"
+                            + "You and the other men unload from the ship onto a raft\n"
+                            + "The Spaniard who paddled out to your ship is now bringing you and the others ashore\n"
+                            + "\n"
+                            + "You are at the Beach. The arrival point.\n"
+                            + "\"These are the men I was promised?\"\n"
+                            + "A short, fat man approaches...\n"
+                            + "\n"
+                            + "\"You'll do I suppose\"\n"
+                            + "\"I am your commander, Captain Bota\n"
+                            + "\n"
+                            + "Two other Spaniards fall in behind Captain Bota\n"
+                            + "\"You answer to me and no one else.\"\n"
+                            + "\n"
+                            + "\"Well....\"\n"
+                            + "\"If we are to stake this land for Spain, we'll need an outpost\"\n"
+                            + "\"Go into the jungle west of here and collect some wood, then you men can get to building\"\n"
+                            + "\n"
+                            + "Head into the jungle and collect 3 pieces of wood. Return to the beach once you've collected enough");
+    
+    Quest quest2 = new Quest("quest2", "You are back at the beach, the arrival point.\n"
+                            + "Savages line the beach. Captain Bota rests on his knees, bloodied\n"
+                            + "\n"
+                            + "A man emerges from behind the line of savages, but he does not look like the rest of them\n"
+                            + "He looks like you, a man from the east\n"
+                            + "The man pulls Captain Bota's head back by his hair. His eyes meet yours\n"
+                            + "\n"
+                            + "\"You see what happens to unchecked ambition?\", the man says, seemingly to you\n"
+                            + "With his other hand, the man draws a dagger across Bota's throat\n"
+                            + "Bota's body falls into the sand\n"
+                            + "\"Your captain would not cooperate. I'm hoping you will not make the same mistake\"\n"
+                            + "\"I think it's time you understand why you are really here\n"
+                            + "\n"
+                            + "\"You believe you were sent here to tame this land and stake it for Spain, Aye?\n"
+                            + "\"I assure you, the men you call leaders in Spain are drunk with power, but they are not fools\"\n"
+                            + "\"Do you really think you came all this way for some sand and trees?\"\n"
+                            + "\"No\"\n"
+                            + "\"You are here for the same reason I am... For the Amulet\"\n"
+                            + "\n"
+                            + "The man comes closer. Grining, as he takes a cloth from his pocket and wipes his blade of Bota's blood\n"
+                            + "\"We'll make good use of you Spaniard\"\n"
+                            + "\n"
+                            + "\"This jungle holds many secrets, but we are here for only one... and you are going to find it for me\"\n"
+                            + "\n"
+                            + "\"Deep in this jungle is a sacred place. A palace that rises above the trees. There, you will find my Amulet of Quetzal\"\n"
+                            + "\"You bring it here, back to me, and I'll see to it can return to Spain"
+                            + "\"Until then, I'll wait here and continue to feast all this fine Spanish wine your Captain Bota left me. How I've missed the taste so much\"\n"
+                            + "\"Well now, run along Spaniard. I'll be seeing you soon\"\n"
+                            + "\n"
+                            + "\n Head into the jungle and retreive the Amulet");
 
-                + "Enter: n, s, w, e, up, down\n"
-                + "or q to quit.";
-        showStr(intro);
-        look();
+    Quest quest3 = new Quest("qeust3", "Youve reached the Coba pyramid but need the 3 stones to enter. Go get them");
+    Quest quest4 = new Quest("qeust4", "Youve gotten the stones and have returned to the pyramid. You get the Amulet and now need to take it the antaginist");
+    Quest quest5 = new Quest("quest5", "Youve returned the amulet to the antaginist on the beach, but he still need to the cento rune to activate it. Go get it");
+    Quest quest6 = new Quest("quest6", "Youve gotten the senota stone and have returned in the antaginist. It has undesired affects and he dies. You get his map for Antlatis and set sail for game 2. Game Over");
+    String outro = "game over";
+
+    public void showControls() {
+        String controls;
+        controls =  "\n"
+                    + "Controls:\n"
+                    + "N:       North\n"
+                    + "S:       South\n"
+                    + "E:       East\n"
+                    + "W:       West\n"
+                    + "L:       Look Around\n"
+                    + "T:       Take Item\n"
+                    + "D:       Drop Item\n"
+                    + "save:    Save Game\n"
+                    + "load:    Load Game\n"
+                    + "help:    Show Controls\n"
+                    + "Q:       Quit";
+        
+        showStr(controls);
     }
 
     public String runCommand(String inputstr) {
@@ -643,6 +755,59 @@ public class Game implements java.io.Serializable {
         return s;
     }
 
+    public String questCheck(String currentQuest){
+        switch (currentQuest) {
+            case "quest1":
+                if(player.inventory().contains("wood") && player.getLocation().equals("Beach87")){
+                    quest1.complete();
+                    quest2.begin();
+                    currentQuest = quest2.getName();
+                    showStr(quest2.getIntro());
+                    return currentQuest;
+                }
+                break;
+            case "quest2":
+                if(player.getLocation().equals("CobaPyramid00")){
+                    quest2.complete();
+                    quest3.begin();
+                    currentQuest = quest3.getName();
+                    showStr(quest3.getIntro());
+                    return currentQuest;
+                }
+                break;
+            case "quest3":
+                if(player.getLocation().equals("CobaPyramid00") && player.inventory().contains("Bird Stone") && player.inventory().contains("Cat Stone") && player.inventory().contains("Lizard Stone")){
+                    quest3.complete();
+                    quest4.begin();
+                    currentQuest = quest4.getName();
+                    showStr(quest4.getIntro());
+                    return currentQuest;
+                }
+                break;
+            case "quest4":
+                if(player.inventory().contains("Quetzal Amulet") && player.getLocation().equals("Beach87")){
+                    quest4.complete();
+                    quest5.begin();
+                    currentQuest = quest5.getName();
+                    showStr(quest5.getIntro());
+                    return currentQuest;
+                }
+                break;
+            case "quest5":
+                quest5.complete();
+                quest6.begin();
+                currentQuest = quest6.getName();
+                showStr(quest6.getIntro());
+                return currentQuest;
+            case "quest6":
+                quest6.complete();
+                showStr(outro);
+                return currentQuest;
+            default:
+                return currentQuest;
+        }
+        return currentQuest;
+     }
     // Test..... BEGIN
     void showTest(String s) {
         showStr("> " + s);

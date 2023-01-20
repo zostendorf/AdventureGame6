@@ -1,5 +1,4 @@
 package game;
-
 /*
  * Sample Java file by Huw Collingbourne
  *
@@ -9,7 +8,8 @@ package game;
  *    http://www.bitwisebooks.com
  * 
  */
-import game.Game;
+
+
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -17,6 +17,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+
 
 public class AdventureGame {
 
@@ -48,32 +49,47 @@ public class AdventureGame {
             System.out.print(e.getClass() + ": " + e.getMessage() + "\n");
         }
     }
+    
 
     public static void main(String[] args) throws IOException {
         BufferedReader in;
         String input;
         String output = "";
+        String currentQuest;
         game = new Game();
+        
         in = new BufferedReader(new InputStreamReader(System.in));
-        game.showIntro();
+        
+        game.showTitle();
+        game.showControls();
+
+        game.showStr(game.quest1.getIntro());
+        game.quest1.begin();
+        currentQuest = game.quest1.getName();
+        
         do {
             System.out.print("> ");
             input = in.readLine();
-            switch (input) {
-                case "save":
-                    saveGame();
-                    break;
-                case "load":
-                    loadGame();
-                    break;
-                default:
-                    output = game.runCommand(input);
-                    break;
-            }
-            if (!output.trim().isEmpty()) {
-                game.showStr(output);
+            if(!input.equals("")){
+                switch (input) {
+                    case "save":
+                        saveGame();
+                        break;
+                    case "load":
+                        loadGame();
+                        break;
+                    default:
+                        output = game.runCommand(input);
+                        break;
+                }
+                if (!output.trim().isEmpty()) {
+                    game.showStr(output);
+                }
+                game.questCheck(currentQuest);
             }
         } while (!"q".equals(input));
+        
     }
+    
 
 }

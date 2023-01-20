@@ -1,8 +1,4 @@
-/*
- * Bitwise Books & Courses - sample Java code
- * http://www.bitwisebooks
- * http://www.bitwisecourses.com
- */
+
 package gameobjects;
 
 import globals.Dir;

@@ -1,10 +1,12 @@
 TODOs:
 - finish adding objects to rooms
+- add object names to parser vocab
 - Take multiple of the same object
 - Take objects with 2 word names
 - unlock quests/events after visiting specific places
 - unlock quests/events when specific objects are in the players inventory
 - block the raft and ship until final quest is complete
+- figure out how to skip/complete text on key stroke
 
 
 

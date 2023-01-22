@@ -161,6 +161,7 @@ public class Game implements java.io.Serializable {
         ThingList Ocean99List               = new ThingList("Ocean99List");
 
         Room CobaPyramid00          = new Room();
+            CobaPyramid00List.add(new Thing("Amulet", "The Amulet", CobaPyramid00));
         Room CobaAlter01            = new Room();
         Room CobaSouthJungle02      = new Room();
         Room CobaUnknownShrine03    = new Room();
@@ -170,11 +171,13 @@ public class Game implements java.io.Serializable {
         Room Jungle07               = new Room();
         Room Jungle08               = new Room();
         Room Jungle09               = new Room();
+            Jungle09List.add(new Thing("Egyptian Tablet top left corner", "A portion of an artifact. Could there be more?", Jungle09));
 
         Room CobaGameCourt10        = new Room();
         Room CobaSmallPyramid11     = new Room();
         Room Jungle12               = new Room();
         Room Jungle13               = new Room();
+            Jungle13List.add(new Thing("Nordic etched blade shard", "A portion of an artifact. Could there be more?", Jungle13));
         Room CobaRiverCrossing14    = new Room();
         Room Jungle15               = new Room();
         Room Jungle16               = new Room();
@@ -183,6 +186,7 @@ public class Game implements java.io.Serializable {
         Room EgyptianShip19         = new Room();
 
         Room Jungle20               = new Room();
+            Jungle20List.add(new Thing("Egyptian Tablet bottom right corner", "A portion of an artifact. Could there be more?", Jungle20));
         Room Jungle21               = new Room();
         Room Jungle22               = new Room();
         Room Jungle23               = new Room();
@@ -196,7 +200,9 @@ public class Game implements java.io.Serializable {
         Room UnknownShrine30        = new Room();
         Room Jungle31               = new Room();
         Room Jungle32               = new Room();
+            Jungle32List.add(new Thing("Egyptian Tablet top right corner", "A portion of an artifact. Could there be more?", Jungle32));
         Room PantherDen33           = new Room();
+            PantherDen33List.add(new Thing("cat stone", "A stone, carved into the shape of a cat. It appears.", PantherDen33));
         Room Jungle34               = new Room();
         Room CobaRiver35            = new Room();
         Room SavageVillage36        = new Room();
@@ -210,6 +216,7 @@ public class Game implements java.io.Serializable {
         Room Jungle43               = new Room();
         Room Jungle44               = new Room();
         Room Pond45                 = new Room();
+            Pond45List.add(new Thing("Nordic etched blade shard", "A portion of an artifact. Could there be more?", Pond45));
         Room Jungle46               = new Room();
         Room Jungle47               = new Room();
         Room Jungle48               = new Room();
@@ -217,9 +224,11 @@ public class Game implements java.io.Serializable {
 
         Room WitchDoctor50          = new Room();
         Room Jungle51               = new Room();
+            Jungle51List.add(new Thing("Egyptian Tablet bottom left corner", "A portion of an artifact. Could there be more?", Jungle51));
         Room Jungle52               = new Room();
         Room Spring53               = new Room();
         Room UnknownShrine54        = new Room();
+            UnknownShrine54List.add(new Thing("lizard stone", "A stone, carved into the shape of a lizard. It seems very old.", UnknownShrine54));
         Room Jungle55               = new Room();
         Room Jungle56               = new Room();
         Room PantherDen57           = new Room();
@@ -231,13 +240,19 @@ public class Game implements java.io.Serializable {
         Room VikingOutpost62        = new Room();
         Room UnknownRiver63         = new Room();
         Room Jungle64               = new Room();
+            Jungle64List.add(new Thing("wood", "A log of Royal Palm wood", Jungle64));
         Room Jungle65               = new Room();
         Room TulumPyramid66         = new Room();
         Room TulumVillage67         = new Room();
         Room Jungle68               = new Room();
+            Jungle68List.add(new Thing("wood", "A log of Royal Palm wood", Jungle68));
         Room Beach69                = new Room();
+            Beach69List.add(new Thing("sand", "A handful of sand", Beach69));
+            Beach69List.add(new Thing("Nordic etched pole", "A portion of an artifact. Could there be more?", Beach69));
 
         Room Jungle70               = new Room();
+            Jungle70List.add(new Thing("wood", "A log of Royal Palm wood", Jungle70));
+            Jungle70List.add(new Thing("wood", "A log of Royal Palm wood", Jungle70));
         Room Jungle71               = new Room();
         Room Jungle72               = new Room();
         Room UnknownRiver73         = new Room();
@@ -246,47 +261,71 @@ public class Game implements java.io.Serializable {
         Room TulumVillage76         = new Room();
         Room TulumSmallPyramid77    = new Room();
         Room Beach78                = new Room();
+            Beach78List.add(new Thing("sand", "A handful of sand", Beach78));
+            Beach78List.add(new Thing("sea shell", "A shell from the sea. Bright and colorful", Beach78));
         Room Ocean79                = new Room();
+            Ocean79List.add(new Thing("salt water", "A handful of salty water", Ocean79));
+            Ocean79List.add(new Thing("barracuda", "A Barracuda", Ocean79));
 
         Room Trap80                 = new Room();
         Room Jungle81               = new Room();
+            Jungle81List.add(new Thing("wood", "A log of Royal Palm wood", Jungle81));
         Room Jungle82               = new Room();
+            Jungle82List.add(new Thing("wood", "A log of Royal Palm wood", Jungle82));
         Room UnknownRiver83         = new Room();
+            UnknownRiver83List.add(new Thing("fresh water", "fresh drinkable water", UnknownRiver83));
         Room CenoteDasOjos84        = new Room();
+            CenoteDasOjos84List.add(new Thing("The Blue Emerald", "A remarkably blue gem.", CenoteDasOjos84));
+            CenoteDasOjos84List.add(new Thing("fresh water", "fresh drinkable water", CenoteDasOjos84));
         Room Jungle85               = new Room();
+            Jungle85List.add(new Thing("wood", "A log of Royal Palm wood", Jungle85));
+            Jungle85List.add(new Thing("wood", "A log of Royal Palm wood", Jungle85));
         Room Beach86                = new Room();
+            Beach86List.add(new Thing("sand", "A handful of sand", Beach86));
+            Beach86List.add(new Thing("sea shell", "A shell from the sea. Bright and colorful", Beach86));
         Room Beach87                = new Room();
+            Beach87List.add(new Thing("sand", "A handful of sand", Beach87));
         Room Ocean88                = new Room();
+            Ocean88List.add(new Thing("salt water", "A handful of salty water", Ocean88));
         Room Ocean89                = new Room();
+            Ocean89List.add(new Thing("salt water", "A handful of salty water", Ocean89));
+            Ocean89List.add(new Thing("barracuda", "A Barracuda", Ocean89));
 
         Room SavageVillage90        = new Room();
+            SavageVillage90List.add(new ContainerThing("wooden chest", "a primitive chest", false, false, true, false, new ThingList("WoodenChestList"), SavageVillage90));
+            // WoodenChestList.add(new Thing("coconut", "A coconut from a palm tree", null));
+            // WoodenChestList.add(new Thing("dagger", "A crude stone dagger", null));
+            // WoodenChestList.add(new Thing("orange", "A perfectly ripe orange", null));
         Room Jungle91               = new Room();
+            Jungle91List.add(new Thing("moss", "A handful of tree moss", Jungle91));
+            Jungle91List.add(new Thing("wood", "A log of Royal Palm wood", Jungle91));
+            Jungle91List.add(new Thing("wood", "A log of Royal Palm wood", Jungle91));
         Room Jungle92               = new Room();
+            Jungle92List.add(new Thing("Nordic etched pole", "A portion of an artifact. Could there be more?", Jungle92));
+            Jungle92List.add(new Thing("wood", "A log of Royal Palm wood", Jungle92));
         Room UnknownRiver93         = new Room();
         Room Jungle94               = new Room();
+            Jungle94List.add(new Thing("moss", "A handful of tree moss", Jungle94));
+            Jungle94List.add(new Thing("wood", "A log of Royal Palm wood", Jungle94));
         Room Beach95                = new Room();
+            Beach95List.add(new Thing("sand", "A handful of sand", Beach95));
+            Beach95List.add(new Thing("sea shell", "A shell from the sea. Bright and colorful", Beach95));
         Room Ocean96                = new Room();
+            Ocean96List.add(new Thing("salt water", "A handful of salty water", Ocean96));
         Room Raft97                 = new Room();
         Room Ship98                 = new Room();
         Room Ocean99                = new Room();
+            Ocean99List.add(new Thing("salt water", "A handful of salty water", Ocean99));
 
-        Thing water             = new Thing("fresh water", "fresh drinkable water", null);
-        Thing sand              = new Thing("sand", "A handful of sand", Beach87);
-        Thing moss              = new Thing("moss", "A handful of tree moss", null);
-        Thing wood              = new Thing("wood", "A log of wood", Jungle85);
         Thing axe               = new Thing("axe", "An axe, constructed from a wooden handle, and a stone blade. For chopping trees", null);
         Thing sword             = new Thing("sword", "a sharp Spanish sword", null);
         Thing flint             = new Thing("flint", "a piece of flint rock", null);
         Thing spear             = new Thing("spear", "A weapon of the natives. A long wooden shaft, and a spear tip made of flint", null);
-        Thing seaShell          = new Thing("sea shell", "A shell from the sea. Bright and colorful", null);
-        Thing egyptianPiece1    = new Thing("Egyptian Tablet bottom left corner", "A portion of an artifact. Could there be more?", null);
-        Thing egyptianPiece2    = new Thing("Egyptian Tablet bottom right corner", "A portion of an artifact. Could there be more?", null);
-        Thing egyptianPiece3    = new Thing("Egyptian Tablet top left corner", "A portion of an artifact. Could there be more?", null);
-        Thing egyptianPiece4    = new Thing("Egyptian Tablet top right corner", "A portion of an artifact. Could there be more?", null);
-        Thing nordicPiece1      = new Thing("Nordic etched pole", "A portion of an artifact. Could there be more?", null);
-        Thing nordicPiece2      = new Thing("Nordic etched pole", "A portion of an artifact. Could there be more?", null);
-        Thing nordicPiece3      = new Thing("Nordic etched blade shard", "A portion of an artifact. Could there be more?", null);
-        Thing nordicPiece4      = new Thing("Nordic etched blade shard", "A portion of an artifact. Could there be more?", null);
+
+        //trollRoomList.add(new Treasure("carrot", "It is a very crunchy carrot", 1, trollRoom));
+        //trollRoomList.add(new ContainerThing("sack", "a smelly old sack", true, true, true, true, new ThingList("sackList"), trollRoom));
+        //trollRoomList.add(new ContainerThing("bowl", "a brass bowl", true, true, false, true, new ThingList("bowlList"), trollRoom));
+        //trollRoomList.add(new ContainerThing("box", "a cardboard box", true, true, true, true, new ThingList("boxList"), trollRoom));
 
         //                 Room( name,   description,              N,        S,      W,      E,  [Up], [Down])
         CobaPyramid00.init("The Great Coba Pyramid", "It's beautiful, massive. A step pyramid scraping the sky.", null, CobaAlter01, null, CobaGameCourt10, null, null, CobaPyramid00List);
@@ -710,9 +749,26 @@ public class Game implements java.io.Serializable {
                             + "\"Well now, run along Spaniard. I'll be seeing you soon\"\n"
                             + "\n"
                             + "\n Head into the jungle and retreive the Amulet");
+                            
 
-    Quest quest3 = new Quest("qeust3", "Youve reached the Coba pyramid but need the 3 stones to enter. Go get them");
-    Quest quest4 = new Quest("qeust4", "Youve gotten the stones and have returned to the pyramid. You get the Amulet and now need to take it the antaginist");
+    Quest quest3 = new Quest("quest3", "Finally. The Coba pyramid. It's absolutely massive.\n"
+                            + "nearly as tall as the Cathedral of Barcelona. Maybe taller!"
+                            + "As but where would the Amulet be?\n"
+                            + "The stairs, perhaps there is something at the top."
+                            + "\n"
+                            + "You climb the stairs, well over one hundred in number..."
+                            + "\n"
+                            + "Incredible. Higher than any point in the forest. The jungle stretches on in every direction."
+                            + "There is a door!\n"
+                            + "You push but it does not budge.\n"
+                            + "there are slots in the door, and engravings above each slot.\n"
+                            + "An engraving of a bird.\n"
+                            + "An engraving of a lizard.\n"
+                            + "And an engraving of a cat.\n"
+                            + "\n"
+                            + "There must be objects that fit these slots. Maybe once they're placed, the door will open.\n");
+
+    Quest quest4 = new Quest("quest4", "Youve gotten the stones and have returned to the pyramid. You get the Amulet and now need to take it the antaginist");
     Quest quest5 = new Quest("quest5", "Youve returned the amulet to the antaginist on the beach, but he still need to the cento rune to activate it. Go get it");
     Quest quest6 = new Quest("quest6", "Youve gotten the senota stone and have returned in the antaginist. It has undesired affects and he dies. You get his map for Antlatis and set sail for game 2. Game Over");
     String outro = "game over";

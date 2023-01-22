@@ -63,7 +63,7 @@ public class AdventureGame {
         game.showTitle();
         game.showControls();
 
-        game.showStr(game.quest1.getIntro());
+        //game.showStr(game.quest1.getIntro());
         game.quest1.begin();
         currentQuest = game.quest1.getName();
         

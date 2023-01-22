@@ -1,8 +1,4 @@
-/*
- * Bitwise Books & Courses - sample Java code
- * http://www.bitwisebooks
- * http://www.bitwisecourses.com
- */
+
 package gameobjects;
 
 import globals.Dir;
@@ -33,7 +29,8 @@ public class Actor extends ThingHolder implements java.io.Serializable {
         if (s.isEmpty()) {
             s = "nothing";
         }
-        return "You have " + s;
+        return "You have:\n" 
+        + s;
     }
 
     // is the thing found in any list (including 'nested' lists
@@ -196,9 +193,9 @@ public class Actor extends ThingHolder implements java.io.Serializable {
             t = t_th.getThing();
             tl = t_th.getList();
             th = t_th.getThingHolder();
-            if (tl == this.getThings()) {
-                s = "You already have the " + obname;
-            } else {
+            // if (tl == this.getThings()) {
+            //     s = "You already have " + obname;
+            // } else {
                 if (t.isTakable()) {
                     transferOb(t, th, this);
                     if (th instanceof ContainerThing) {
@@ -209,7 +206,7 @@ public class Actor extends ThingHolder implements java.io.Serializable {
                 } else {
                     s = "You can't take the " + t.getName() + "!";
                 }
-            }
+            //}
         }
         return s;
     }
